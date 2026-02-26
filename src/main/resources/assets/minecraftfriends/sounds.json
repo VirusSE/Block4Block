@@ -1,0 +1,10 @@
+{
+  "block_4_block": {
+    "sounds": [
+      {
+        "name": "minecraftfriends:block_4_block",
+        "stream": true
+      }
+    ]
+  }
+}
