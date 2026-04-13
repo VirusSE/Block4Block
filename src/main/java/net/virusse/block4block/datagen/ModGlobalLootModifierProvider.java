@@ -1,4 +1,4 @@
-package net.virusse.minecraftfriends.datagen;
+package net.virusse.block4block.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -10,9 +10,9 @@ import net.minecraft.world.level.storage.loot.predicates.WeatherCheck;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
-import net.virusse.minecraftfriends.MinecraftFriends;
-import net.virusse.minecraftfriends.item.ModItems;
-import net.virusse.minecraftfriends.loot.AddItemModifier;
+import net.virusse.block4block.Block4Block;
+import net.virusse.block4block.item.ModItems;
+import net.virusse.block4block.loot.AddItemModifier;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -20,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
 
     public ModGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, MinecraftFriends.MOD_ID);
+        super(output, registries, Block4Block.MOD_ID);
     }
 
     @Override

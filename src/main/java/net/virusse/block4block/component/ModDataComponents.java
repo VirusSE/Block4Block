@@ -1,6 +1,6 @@
-package net.virusse.minecraftfriends.component;
+package net.virusse.block4block.component;
 
-import net.virusse.minecraftfriends.MinecraftFriends;
+import net.virusse.block4block.Block4Block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentType;
 import net.neoforged.bus.api.IEventBus;
@@ -12,7 +12,7 @@ import java.util.function.UnaryOperator;
 public class ModDataComponents {
     @SuppressWarnings("removal")
     public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENT_TYPES =
-            DeferredRegister.createDataComponents(MinecraftFriends.MOD_ID);
+            DeferredRegister.createDataComponents(Block4Block.MOD_ID);
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> COORDINATES = register("coordinates",
             builder -> builder.persistent(BlockPos.CODEC));

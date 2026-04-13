@@ -1,4 +1,4 @@
-package net.virusse.minecraftfriends.loot;
+package net.virusse.block4block.loot;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

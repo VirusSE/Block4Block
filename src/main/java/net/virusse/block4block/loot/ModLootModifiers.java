@@ -1,17 +1,17 @@
-package net.virusse.minecraftfriends.loot;
+package net.virusse.block4block.loot;
 
 import com.mojang.serialization.MapCodec;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.virusse.minecraftfriends.MinecraftFriends;
+import net.virusse.block4block.Block4Block;
 
 import java.util.function.Supplier;
 
 public class ModLootModifiers {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
-            DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, MinecraftFriends.MOD_ID);
+            DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Block4Block.MOD_ID);
 
     public static final Supplier<MapCodec<? extends IGlobalLootModifier>> ADD_ITEM =
             LOOT_MODIFIER_SERIALIZERS.register("add_item", () -> AddItemModifier.CODEC);

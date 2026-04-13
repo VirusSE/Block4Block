@@ -1,4 +1,4 @@
-package net.virusse.minecraftfriends;
+package net.virusse.block4block;
 
 import java.util.List;
 import java.util.Set;
