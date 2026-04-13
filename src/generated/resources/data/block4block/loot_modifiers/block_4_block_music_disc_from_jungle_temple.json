@@ -1,5 +1,5 @@
 {
-  "type": "minecraftfriends:add_item",
+  "type": "block4block:add_item",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
@@ -10,5 +10,5 @@
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "minecraftfriends:block_4_block_music_disc"
+  "item": "block4block:block_4_block_music_disc"
 }
