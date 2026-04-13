@@ -1,6 +1,6 @@
-package net.virusse.minecraftfriends;
+package net.virusse.block4block;
 
-import net.virusse.minecraftfriends.loot.ModLootModifiers;
+import net.virusse.block4block.loot.ModLootModifiers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -32,51 +32,51 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import net.virusse.minecraftfriends.sound.ModSounds;
-import net.virusse.minecraftfriends.item.ModItems;
-import net.virusse.minecraftfriends.item.ModCreativeModeTabs;
-import net.virusse.minecraftfriends.component.ModDataComponents;
+import net.virusse.block4block.sound.ModSounds;
+import net.virusse.block4block.item.ModItems;
+import net.virusse.block4block.item.ModCreativeModeTabs;
+import net.virusse.block4block.component.ModDataComponents;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(MinecraftFriends.MOD_ID)
-public class MinecraftFriends {
+@Mod(Block4Block.MOD_ID)
+public class Block4Block {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "minecraftfriends";
+    public static final String MOD_ID = "block4block";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "minecraftfriends" namespace
+    // Create a Deferred Register to hold Blocks which will all be registered under the "block4block" namespace
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
-    // Create a Deferred Register to hold Items which will all be registered under the "minecraftfriends" namespace
+    // Create a Deferred Register to hold Items which will all be registered under the "block4block" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD_ID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "minecraftfriends" namespace
+    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "block4block" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-    // Creates a new Block with the id "minecraftfriends:example_block", combining the namespace and path
+    // Creates a new Block with the id "block4block:example_block", combining the namespace and path
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    // Creates a new BlockItem with the id "minecraftfriends:example_block", combining the namespace and path
+    // Creates a new BlockItem with the id "block4block:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
 
-    // Creates a new food net.virusse.minecraftfriends.item with the id "minecraftfriends:example_id", nutrition 1 and saturation 2
+    // Creates a new food net.virusse.block4block.item with the id "block4block:example_id", nutrition 1 and saturation 2
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
-    // Creates a creative tab with the id "minecraftfriends:example_tab" for the example net.virusse.minecraftfriends.item, that is placed after the combat tab
+    // Creates a creative tab with the id "block4block:example_tab" for the example net.virusse.block4block.item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.minecraftfriends")) //The language key for the title of your CreativeModeTab
+            .title(Component.translatable("itemGroup.block4block")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example net.virusse.minecraftfriends.item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(EXAMPLE_ITEM.get()); // Add the example net.virusse.block4block.item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public MinecraftFriends(IEventBus modEventBus, ModContainer modContainer) {
+    public Block4Block(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (MinecraftFriends) to respond directly to events.
+        // Note that this is necessary if and only if we want *this* class (Block4Block) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
@@ -89,7 +89,7 @@ public class MinecraftFriends {
 
         ModLootModifiers.register(modEventBus);
 
-        // Register the net.virusse.minecraftfriends.item to a creative tab
+        // Register the net.virusse.block4block.item to a creative tab
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -109,7 +109,7 @@ public class MinecraftFriends {
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));*/
     }
 
-    // Add the example block net.virusse.minecraftfriends.item to the building blocks tab
+    // Add the example block net.virusse.block4block.item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 /*        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EXAMPLE_BLOCK_ITEM);

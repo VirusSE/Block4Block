@@ -1,4 +1,4 @@
-package net.virusse.minecraftfriends;
+package net.virusse.block4block;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
@@ -11,11 +11,11 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
-@Mod(value = MinecraftFriends.MOD_ID, dist = Dist.CLIENT)
+@Mod(value = Block4Block.MOD_ID, dist = Dist.CLIENT)
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = MinecraftFriends.MOD_ID, value = Dist.CLIENT)
-public class MinecraftFriendsClient {
-    public MinecraftFriendsClient(ModContainer container) {
+@EventBusSubscriber(modid = Block4Block.MOD_ID, value = Dist.CLIENT)
+public class Block4BlockClient {
+    public Block4BlockClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.
@@ -25,7 +25,7 @@ public class MinecraftFriendsClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-//        MinecraftFriends.LOGGER.info("HELLO FROM CLIENT SETUP");
-//        MinecraftFriends.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+//        Block4Block.LOGGER.info("HELLO FROM CLIENT SETUP");
+//        Block4Block.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
