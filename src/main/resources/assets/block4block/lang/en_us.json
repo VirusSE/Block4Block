@@ -1,0 +1,18 @@
+{
+  "itemGroup.block4block": "Example Mod Tab",
+  "block.block4block.example_block": "Example Block",
+  "item.block4block.example_item": "Example Item",
+
+  "block4block.configuration.title": "Block for Block Configs",
+  "block4block.configuration.section.block4block.common.toml": "Block for Block Configs",
+  "block4block.configuration.section.block4block.common.toml.title": "Block for Block Configs",
+  "block4block.configuration.items": "Item List",
+  "block4block.configuration.logDirtBlock": "Log Dirt Block",
+  "block4block.configuration.magicNumberIntroduction": "Magic Number Text",
+  "block4block.configuration.magicNumber": "Magic Number",
+
+  "item.block4block.block_4_block_music_disc": "Block for Block Music Disc",
+  "item.block4block.block_4_block_music_disc.desc": "Lilli Lutscher - Block for Block (CC0)",
+
+  "creativetab.block4block.friends_items": "Friends Items"
+}

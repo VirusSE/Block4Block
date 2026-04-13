@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description":{
+    "translate": "item.block4block.block_4_block_music_disc.desc"
+  },
+  "length_in_seconds": 222.0,
+  "sound_event": "block4block:block_4_block"
+}
