@@ -1,5 +1,5 @@
 {
-  "type": "minecraftfriends:add_item",
+  "type": "block4block:add_item",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
