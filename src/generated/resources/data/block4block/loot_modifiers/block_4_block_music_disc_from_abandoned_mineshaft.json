@@ -10,5 +10,5 @@
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "minecraftfriends:block_4_block_music_disc"
+  "item": "block4block:block_4_block_music_disc"
 }
